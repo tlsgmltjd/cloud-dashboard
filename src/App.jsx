@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Header from "./Header";
+import Header from "./components/Header";
+import Card from "./components/Card";
 
 const MOCK_DATA = [
   {
@@ -50,6 +51,7 @@ function App() {
   return (
     <Container>
       <Header />
+      <Card />
     </Container>
   );
 }

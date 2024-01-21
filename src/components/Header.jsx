@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import LOGO from "./assets/logo.png";
+import LOGO from "../assets/logo.png";
 
 const Header = () => {
   return (
