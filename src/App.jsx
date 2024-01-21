@@ -52,6 +52,10 @@ function App() {
     <Container>
       <Header />
       <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </Container>
   );
 }
@@ -62,7 +66,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  gap: 30px;
   background: #f8f9fb;
 `;
 

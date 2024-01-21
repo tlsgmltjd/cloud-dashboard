@@ -57,6 +57,7 @@ const IdValue = styled.span``;
 
 const Content = styled.p`
   color: #868e96;
+  font-weight: 400;
   margin: 0;
 `;
 

@@ -22,7 +22,6 @@ const HeaderContainer = styled.header`
   align-items: center;
   gap: 20px;
   background-color: #f8f9fb;
-  margin-bottom: 28px;
 `;
 
 const Img = styled.img``;
