@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "./components/Header";
 import Card from "./components/Card";
+import InfoCard from "./components/InfoCard";
 
 const MOCK_DATA = [
   {
@@ -94,14 +95,17 @@ function App() {
     <Container>
       <Header />
       <Box>
-        {MOCK_DATA.map((card) => (
-          <Card
-            key={card.id}
-            id={card.id}
-            exp={card.expiration_date}
-            price={card.price}
-          />
-        ))}
+        <CardList>
+          {MOCK_DATA.map((card) => (
+            <Card
+              key={card.id}
+              id={card.id}
+              exp={card.expiration_date}
+              price={card.price}
+            />
+          ))}
+        </CardList>
+        <InfoCard />
       </Box>
     </Container>
   );
@@ -110,15 +114,25 @@ function App() {
 const Container = styled.div`
   width: 100%;
   height: 100vh;
+  gap: 30px;
+  background: #f8f9fb;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  background: #f8f9fb;
 `;
 
 const Box = styled.div`
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 30px;
+`;
+
+const CardList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default App;
