@@ -52,7 +52,12 @@ function App() {
     <Container>
       <Header />
       {MOCK_DATA.map((card) => (
-        <Card id={card.id} exp={card.expiration_date} price={card.price} />
+        <Card
+          key={card.id}
+          id={card.id}
+          exp={card.expiration_date}
+          price={card.price}
+        />
       ))}
     </Container>
   );

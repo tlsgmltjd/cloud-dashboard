@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import LeftArrow from "../assets/svg/LeftArrow";
 
+// eslint-disable-next-line react/prop-types
 const Card = ({ id, exp, price }) => {
+  const onExtend = () => {};
+
   return (
     <Container>
       <CardHeader>
@@ -9,11 +12,13 @@ const Card = ({ id, exp, price }) => {
           <Id>ID</Id>
           <IdValue>{id}</IdValue>
         </IdBox>
-        <LeftArrow />
+        <InfoBtn>
+          <LeftArrow />
+        </InfoBtn>
       </CardHeader>
       <Content>만료일 : {exp}</Content>
-      <Content>가격 : {price}</Content>
-      <Btn>연장하기</Btn>
+      <Content>가격 : {price}원</Content>
+      <Btn onClick={onExtend}>연장하기</Btn>
     </Container>
   );
 };
@@ -27,6 +32,13 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 18px;
   gap: 20px;
+`;
+
+const InfoBtn = styled.button`
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  border: none;
+  cursor: pointer;
 `;
 
 const CardHeader = styled.div`
@@ -69,6 +81,7 @@ const Btn = styled.button`
   width: 80px;
   border-radius: 30px;
   color: #868e96;
+  cursor: pointer;
 `;
 
 export default Card;
