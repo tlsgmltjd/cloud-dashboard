@@ -17,11 +17,12 @@ const HeaderContainer = styled.header`
   left: 0;
   width: 100%;
   padding: 20px 0;
-  border-bottom: 2px solid rgba(248, 249, 251, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background-color: #f8f9fb;
+  margin-bottom: 28px;
 `;
 
 const Img = styled.img``;
