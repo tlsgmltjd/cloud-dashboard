@@ -1,3 +1,6 @@
+import styled from "styled-components";
+import Header from "./Header";
+
 const MOCK_DATA = [
   {
     id: "1234-asdf-asdf-asdf",
@@ -44,7 +47,16 @@ const MOCK_DATA = [
 ];
 
 function App() {
-  return <></>;
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
 }
+
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+`;
 
 export default App;
