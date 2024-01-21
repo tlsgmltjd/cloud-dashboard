@@ -51,11 +51,9 @@ function App() {
   return (
     <Container>
       <Header />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {MOCK_DATA.map((card) => (
+        <Card id={card.id} exp={card.expiration_date} price={card.price} />
+      ))}
     </Container>
   );
 }

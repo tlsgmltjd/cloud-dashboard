@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import LeftArrow from "../assets/svg/LeftArrow";
 
-const Card = () => {
+const Card = ({ id, exp, price }) => {
   return (
     <Container>
       <CardHeader>
         <IdBox>
           <Id>ID</Id>
-          <IdValue>1234-asdf-asdf-asdf</IdValue>
+          <IdValue>{id}</IdValue>
         </IdBox>
         <LeftArrow />
       </CardHeader>
-      <Content>만료일 : 2023-10-10 10:10:10</Content>
-      <Content>가격 : 12342038409원</Content>
+      <Content>만료일 : {exp}</Content>
+      <Content>가격 : {price}</Content>
       <Btn>연장하기</Btn>
     </Container>
   );
