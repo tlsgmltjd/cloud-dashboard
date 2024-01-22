@@ -6,7 +6,7 @@ const InfoCard = () => {
 
 const InfoContainer = styled.div`
   background: white;
-  height: 100vh;
+  height: 85vh;
   width: 500px;
   border-radius: 10px;
 `;

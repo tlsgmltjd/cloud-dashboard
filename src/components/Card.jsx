@@ -2,7 +2,7 @@ import styled from "styled-components";
 import LeftArrow from "../assets/svg/LeftArrow";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ id, exp, price }) => {
+const Card = ({ id, exp, price, setIsModal }) => {
   const onExtend = () => {};
 
   return (
@@ -12,7 +12,7 @@ const Card = ({ id, exp, price }) => {
           <Id>ID</Id>
           <IdValue>{id}</IdValue>
         </IdBox>
-        <InfoBtn>
+        <InfoBtn onClick={() => setIsModal(true)}>
           <LeftArrow />
         </InfoBtn>
       </CardHeader>

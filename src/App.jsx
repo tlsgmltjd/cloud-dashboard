@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import InfoCard from "./components/InfoCard";
+import { useState } from "react";
 
 const MOCK_DATA = [
   {
@@ -91,6 +92,8 @@ const MOCK_DATA = [
 ];
 
 function App() {
+  const [isModal, setIsModal] = useState(false);
+
   return (
     <Container>
       <Header />
@@ -102,10 +105,11 @@ function App() {
               id={card.id}
               exp={card.expiration_date}
               price={card.price}
+              setIsModal={setIsModal}
             />
           ))}
         </CardList>
-        <InfoCard />
+        {isModal && <InfoCard />}
       </Box>
     </Container>
   );
@@ -133,6 +137,7 @@ const CardList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 `;
 
 export default App;
