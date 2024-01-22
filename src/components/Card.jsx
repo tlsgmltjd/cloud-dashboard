@@ -2,17 +2,22 @@ import styled from "styled-components";
 import LeftArrow from "../assets/svg/LeftArrow";
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ id, exp, price, setIsModal }) => {
+const Card = ({ id, exp, price, setIsModal, isClicked, setIsClicked }) => {
   const onExtend = () => {};
 
   return (
-    <Container>
+    <Container isClicked={isClicked} id={id}>
       <CardHeader>
         <IdBox>
           <Id>ID</Id>
           <IdValue>{id}</IdValue>
         </IdBox>
-        <InfoBtn onClick={() => setIsModal(true)}>
+        <InfoBtn
+          onClick={() => {
+            setIsModal(true);
+            setIsClicked(id);
+          }}
+        >
           <LeftArrow />
         </InfoBtn>
       </CardHeader>
@@ -32,6 +37,8 @@ const Container = styled.div`
   flex-direction: column;
   font-size: 18px;
   gap: 20px;
+  border: ${({ isClicked, id }) =>
+    isClicked == id ? "1px solid rgba(72, 178, 255, 1)" : "1px solid white"};
 `;
 
 const InfoBtn = styled.button`

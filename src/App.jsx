@@ -92,6 +92,7 @@ const MOCK_DATA = [
 ];
 
 function App() {
+  const [isClicked, setIsClicked] = useState("");
   const [isModal, setIsModal] = useState(false);
 
   return (
@@ -106,6 +107,8 @@ function App() {
               exp={card.expiration_date}
               price={card.price}
               setIsModal={setIsModal}
+              isClicked={isClicked}
+              setIsClicked={setIsClicked}
             />
           ))}
         </CardList>
