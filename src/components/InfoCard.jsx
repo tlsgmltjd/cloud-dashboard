@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-const InfoCard = () => {
-  return <InfoContainer></InfoContainer>;
+// eslint-disable-next-line react/prop-types
+const InfoCard = ({ MOCK_DATA, isClicked }) => {
+  // eslint-disable-next-line react/prop-types
+  const currentData = MOCK_DATA.filter((data) => data.id == isClicked)[0];
+
+  return <InfoContainer>{currentData.id}</InfoContainer>;
 };
 
 const InfoContainer = styled.div`
