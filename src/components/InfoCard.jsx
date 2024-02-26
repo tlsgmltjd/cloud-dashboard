@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import Clear from "../assets/svg/Clear";
+import DropDown from "../assets/svg/DropDown";
+import DropUp from "../assets/svg/DropUp";
+import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
   // eslint-disable-next-line react/prop-types
   const currentData = MOCK_DATA.filter((data) => data.id == isClicked)[0];
+
+  const [guide1, setGuide1] = useState(false);
+  const [guide2, setGuide2] = useState(false);
 
   return (
     <InfoContainer>
@@ -76,22 +82,29 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
       </InfoBox>
       <GuideBox>
         <GuideTitle>연결 방법을 찾고 있나요?</GuideTitle>
-        <GuideSubTitle>Windows 원격 접속 연결 가이드</GuideSubTitle>
-        <GuideContentBox>
-          <GuideContetItem>
-            1. 키보드의 윈도우키를 누른 상태에서 R을 눌러 실행 창을 엽니다.
-          </GuideContetItem>
-          <GuideContetItem>
-            2. mstsc를 입력하고 Enter를 누릅니다.
-          </GuideContetItem>
-          <GuideContetItem>
-            3. 컴퓨터에 제공 받은 아이피(IP)를 입력하고 연결을 누릅니다.
-          </GuideContetItem>
-          <GuideContetItem>
-            4. 사용자 이름에 제공 받은 사용자 이름(USERNAME)을, 암호에 제공 받은
-            암호(PASSWORD)를 넣고 연결을 누릅니다.
-          </GuideContetItem>
-        </GuideContentBox>
+        <GuideSubTitleBox>
+          <DropDownBtn onClick={() => setGuide1((current) => !current)}>
+            {guide1 ? <DropDown /> : <DropUp />}
+          </DropDownBtn>
+          <GuideSubTitle>Windows 원격 접속 연결 가이드</GuideSubTitle>
+        </GuideSubTitleBox>
+        {guide1 && (
+          <GuideContentBox>
+            <GuideContetItem>
+              1. 키보드의 윈도우키를 누른 상태에서 R을 눌러 실행 창을 엽니다.
+            </GuideContetItem>
+            <GuideContetItem>
+              2. mstsc를 입력하고 Enter를 누릅니다.
+            </GuideContetItem>
+            <GuideContetItem>
+              3. 컴퓨터에 제공 받은 아이피(IP)를 입력하고 연결을 누릅니다.
+            </GuideContetItem>
+            <GuideContetItem>
+              4. 사용자 이름에 제공 받은 사용자 이름(USERNAME)을, 암호에 제공
+              받은 암호(PASSWORD)를 넣고 연결을 누릅니다.
+            </GuideContetItem>
+          </GuideContentBox>
+        )}
       </GuideBox>
     </InfoContainer>
   );
@@ -175,6 +188,11 @@ const GuideTitle = styled.h2`
   font-size: 20px;
 `;
 
+const GuideSubTitleBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const GuideSubTitle = styled.h3`
   font-size: 16px;
 `;
@@ -193,6 +211,12 @@ const GuideContentBox = styled.ol`
 
 const GuideContetItem = styled.li`
   font-size: 15px;
+`;
+
+const DropDownBtn = styled.button`
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
 `;
 
 export default InfoCard;
