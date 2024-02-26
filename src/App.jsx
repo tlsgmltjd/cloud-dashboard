@@ -112,7 +112,13 @@ function App() {
             />
           ))}
         </CardList>
-        {isModal && <InfoCard MOCK_DATA={MOCK_DATA} isClicked={isClicked} />}
+        {isModal && (
+          <InfoCard
+            MOCK_DATA={MOCK_DATA}
+            isClicked={isClicked}
+            setIsModal={setIsModal}
+          />
+        )}
       </Box>
     </Container>
   );
