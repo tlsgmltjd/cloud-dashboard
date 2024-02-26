@@ -116,6 +116,7 @@ function App() {
           <InfoCard
             MOCK_DATA={MOCK_DATA}
             isClicked={isClicked}
+            setIsClicked={setIsClicked}
             setIsModal={setIsModal}
           />
         )}
