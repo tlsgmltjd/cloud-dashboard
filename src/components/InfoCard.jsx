@@ -74,6 +74,25 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
           <InfoContent>{currentData?.price}원</InfoContent>
         </InfoItem>
       </InfoBox>
+      <GuideBox>
+        <GuideTitle>연결 방법을 찾고 있나요?</GuideTitle>
+        <GuideSubTitle>Windows 원격 접속 연결 가이드</GuideSubTitle>
+        <GuideContentBox>
+          <GuideContetItem>
+            1. 키보드의 윈도우키를 누른 상태에서 R을 눌러 실행 창을 엽니다.
+          </GuideContetItem>
+          <GuideContetItem>
+            2. mstsc를 입력하고 Enter를 누릅니다.
+          </GuideContetItem>
+          <GuideContetItem>
+            3. 컴퓨터에 제공 받은 아이피(IP)를 입력하고 연결을 누릅니다.
+          </GuideContetItem>
+          <GuideContetItem>
+            4. 사용자 이름에 제공 받은 사용자 이름(USERNAME)을, 암호에 제공 받은
+            암호(PASSWORD)를 넣고 연결을 누릅니다.
+          </GuideContetItem>
+        </GuideContentBox>
+      </GuideBox>
     </InfoContainer>
   );
 };
@@ -84,6 +103,9 @@ const InfoContainer = styled.div`
   width: 500px;
   border-radius: 10px;
   padding: 25px;
+  position: sticky;
+  top: 80px;
+  overflow-y: scroll;
 `;
 
 const Id = styled.span`
@@ -117,12 +139,13 @@ const ClearBtn = styled.button`
 `;
 
 const InfoBox = styled.ul`
-  padding: 20px 0 20px 0;
+  padding: 20px 0 30px 0;
   font-size: 16px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
   gap: 45px;
+  border-bottom: 1px solid #e9ecef;
 `;
 
 const InfoItem = styled.li`
@@ -136,6 +159,40 @@ const InfoTitle = styled.h3`
 
 const InfoContent = styled.p`
   color: #868e96;
+`;
+
+const GuideBox = styled.div`
+  font-weight: 400;
+  color: #495057;
+  padding: 25px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+const GuideTitle = styled.h2`
+  color: #495057;
+  font-size: 20px;
+`;
+
+const GuideSubTitle = styled.h3`
+  font-size: 16px;
+`;
+
+const GuideContentBox = styled.ol`
+  background-color: #f8f9fb;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  gap: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+const GuideContetItem = styled.li`
+  font-size: 15px;
 `;
 
 export default InfoCard;
