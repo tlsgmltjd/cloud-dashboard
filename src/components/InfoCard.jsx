@@ -105,6 +105,33 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
             </GuideContetItem>
           </GuideContentBox>
         )}
+        <GuideSubTitleBox>
+          <DropDownBtn onClick={() => setGuide2((current) => !current)}>
+            {guide2 ? <DropDown /> : <DropUp />}
+          </DropDownBtn>
+          <GuideSubTitle>MacOS 원격 접속 연결 가이드</GuideSubTitle>
+        </GuideSubTitleBox>
+        {guide2 && (
+          <GuideContentBox>
+            <GuideContetItem>
+              1. App Store 에서 Microsoft Remote Desktop 을 검색합니다.
+            </GuideContetItem>
+            <GuideContetItem>2. 해당 앱을 다운로드 받습니다.</GuideContetItem>
+            <GuideContetItem>
+              3. Microsoft Remote Desktop 앱을 실행합니다.
+            </GuideContetItem>
+            <GuideContetItem>4. 상단의 + 아이콘을 누릅니다.</GuideContetItem>
+            <GuideContetItem>5. Add PC 버튼을 누릅니다.</GuideContetItem>
+            <GuideContetItem>
+              6. PC Name에 제공 받은 접속 주소를 입력합니다.
+            </GuideContetItem>
+            <GuideContetItem>7. Add 버튼을 누릅니다.</GuideContetItem>
+            <GuideContetItem>8. 새로 추가된 PC를 누릅니다.</GuideContetItem>
+            <GuideContetItem>
+              9. 발급 받은 사용자 이름과 암호를 입력합니다.
+            </GuideContetItem>
+          </GuideContentBox>
+        )}
       </GuideBox>
     </InfoContainer>
   );
