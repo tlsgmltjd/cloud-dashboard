@@ -55,7 +55,7 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
         </InfoItem>
         <InfoItem>
           <InfoTitle>CPU</InfoTitle>
-          <InfoContent>{currentData?.cpu}CPU</InfoContent>
+          <InfoContent>{currentData?.cpu}vCPU</InfoContent>
         </InfoItem>
         <InfoItem>
           <InfoTitle>메모리</InfoTitle>
