@@ -28,7 +28,12 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: "SUIT"
+  font-family: "SUIT";
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

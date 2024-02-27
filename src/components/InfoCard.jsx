@@ -133,6 +133,15 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
           </GuideContentBox>
         )}
       </GuideBox>
+      <FooterBox>
+        <SysBtn>업그레이드</SysBtn>
+
+        <SysBtnBox>
+          <SysBtn>전원 ON</SysBtn>
+          <SysBtn>전원 OFF</SysBtn>
+          <SysBtn>강제종료</SysBtn>
+        </SysBtnBox>
+      </FooterBox>
     </InfoContainer>
   );
 };
@@ -245,5 +254,19 @@ const DropDownBtn = styled.button`
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 `;
+
+const FooterBox = styled.footer`
+  width: 100%;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+`;
+
+const SysBtnBox = styled.div``;
+const SysBtn = styled.button``;
 
 export default InfoCard;
