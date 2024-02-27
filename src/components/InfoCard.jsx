@@ -134,12 +134,12 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
         )}
       </GuideBox>
       <FooterBox>
-        <SysBtn>업그레이드</SysBtn>
+        <HighListBtn>업그레이드</HighListBtn>
 
         <SysBtnBox>
           <SysBtn>전원 ON</SysBtn>
           <SysBtn>전원 OFF</SysBtn>
-          <SysBtn>강제종료</SysBtn>
+          <RedBtn>강제종료</RedBtn>
         </SysBtnBox>
       </FooterBox>
     </InfoContainer>
@@ -217,6 +217,7 @@ const GuideBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border-bottom: 1px solid #e9ecef;
 `;
 
 const GuideTitle = styled.h2`
@@ -257,7 +258,7 @@ const DropDownBtn = styled.button`
 
 const FooterBox = styled.footer`
   width: 100%;
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
   left: 0;
   display: flex;
@@ -266,7 +267,44 @@ const FooterBox = styled.footer`
   padding: 20px 20px;
 `;
 
-const SysBtnBox = styled.div``;
-const SysBtn = styled.button``;
+const SysBtnBox = styled.div`
+  display: flex;
+  gap: 10px;
+  font-weight: 500;
+`;
+
+const SysBtn = styled.button`
+  background-color: rgba(0, 0, 0, 0);
+  outline: none;
+  color: #868e96;
+  border-radius: 15px;
+  padding: 8px 10px;
+  border: 1px solid #dee2e6;
+  font-size: 15px;
+  cursor: pointer;
+`;
+
+const HighListBtn = styled.button`
+  color: var(--gradation, #48b2ff);
+  border: 1px solid var(--gradation, #48b2ff);
+  background: linear-gradient(90deg, #48b2ff 0.09%, #9747ff 99.87%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 8px 10px;
+  border-radius: 15px;
+  font-size: 15px;
+  cursor: pointer;
+`;
+
+const RedBtn = styled.button`
+  color: #d82424;
+  border: 1px solid #d82424;
+  font-size: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: rgba(0, 0, 0, 0);
+`;
 
 export default InfoCard;
