@@ -12,6 +12,22 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
   const [guide1, setGuide1] = useState(false);
   const [guide2, setGuide2] = useState(false);
 
+  const handleUpgrade = () => {
+    //
+  };
+
+  const handleOn = () => {
+    //
+  };
+
+  const handleOff = () => {
+    //
+  };
+
+  const handleHardOff = () => {
+    //
+  };
+
   return (
     <InfoContainer>
       <BoxHeader>
@@ -134,12 +150,12 @@ const InfoCard = ({ MOCK_DATA, isClicked, setIsClicked, setIsModal }) => {
         )}
       </GuideBox>
       <FooterBox>
-        <HighListBtn>업그레이드</HighListBtn>
+        <HighListBtn onClick={handleUpgrade}>업그레이드</HighListBtn>
 
         <SysBtnBox>
-          <SysBtn>전원 ON</SysBtn>
-          <SysBtn>전원 OFF</SysBtn>
-          <RedBtn>강제종료</RedBtn>
+          <SysBtn onClick={handleOn}>전원 ON</SysBtn>
+          <SysBtn onClick={handleOff}>전원 OFF</SysBtn>
+          <RedBtn onClick={handleHardOff}>강제종료</RedBtn>
         </SysBtnBox>
       </FooterBox>
     </InfoContainer>
